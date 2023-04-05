@@ -6,7 +6,7 @@ A small project of mine that patches the game to show all Unity logs.
 
 ## Download
 
-Just go to [Releases]() to download the latest patcher...
+Just go to [Releases](https://github.com/YungSamzy/bitheroes-console-patch/releases/latest) to download the latest binaries...
 
 
 ## How this works
