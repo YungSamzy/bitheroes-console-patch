@@ -1,0 +1,10 @@
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\bin\Debug\DevConsolePatcher.exe.config
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\bin\Debug\DevConsolePatcher.exe
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\bin\Debug\DevConsolePatcher.pdb
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.csproj.AssemblyReference.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.Properties.Resources.resources
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.csproj.GenerateResource.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.csproj.CoreCompileInputs.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.exe
+C:\Users\Sam\Desktop\ProjectFrame\src\DevConsolePatcher\DevConsolePatcher\obj\Debug\DevConsolePatcher.pdb

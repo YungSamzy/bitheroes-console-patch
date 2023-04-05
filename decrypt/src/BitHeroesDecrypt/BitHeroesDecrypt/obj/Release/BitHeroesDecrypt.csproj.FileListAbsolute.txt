@@ -1,0 +1,8 @@
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\bin\Release\BitHeroesDecrypt.exe.config
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\bin\Release\BitHeroesDecrypt.exe
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\bin\Release\BitHeroesDecrypt.pdb
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\obj\Release\BitHeroesDecrypt.csproj.AssemblyReference.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\obj\Release\BitHeroesDecrypt.csproj.SuggestedBindingRedirects.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\obj\Release\BitHeroesDecrypt.csproj.CoreCompileInputs.cache
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\obj\Release\BitHeroesDecrypt.exe
+C:\Users\Sam\Desktop\ProjectFrame\src\BitHeroesDecrypt\BitHeroesDecrypt\obj\Release\BitHeroesDecrypt.pdb
