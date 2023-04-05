@@ -35,4 +35,4 @@ public class SteamLogin : PlatformLogin
 ```
 
 ## Demo
-![](https://i.ibb.co/gyN7B0J/preview.gif)
+![preview](https://i.ibb.co/gyN7B0J/preview.gif)
