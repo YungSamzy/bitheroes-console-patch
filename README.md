@@ -35,4 +35,4 @@ public class SteamLogin : PlatformLogin
 ```
 
 ## Demo
-![preview](https://i.ibb.co/gyN7B0J/preview.gif)
+![preview](https://github.com/YungSamzy/bitheroes-console-patch/raw/main/preview.gif)
