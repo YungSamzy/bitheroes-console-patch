@@ -14,16 +14,21 @@ public void SetMeter(int meter)
 
 using System;
 using System.Threading;
+using UnityEngine.UI;
 
 namespace com.samzydev.mod
 {
-	// Token: 0x020009B0 RID: 2480
+	// Token: 0x020009AF RID: 2479
 	public class SDMod
 	{
 		// Token: 0x17000FC0 RID: 4032
+		// (get) Token: 0x06005388 RID: 21384
+		// (set) Token: 0x06005389 RID: 21385
+		public static bool spmod { get; set; }
+
+		// Token: 0x17000FC1 RID: 4033
 		// (get) Token: 0x0600538A RID: 21386
 		// (set) Token: 0x0600538B RID: 21387
-		public static bool spmod { get; set; }
 		public static bool newpatchmod { get; set; }
 
 		// Token: 0x0600538C RID: 21388
@@ -62,7 +67,7 @@ namespace com.samzydev.mod
 					else
 					{
 						SDMod.newpatchmod = false;
-						Console.WriteLine("Patch Enabled!");
+						Console.WriteLine("Patch Disabled!");
 					}
 				}
 			}
@@ -74,6 +79,7 @@ namespace com.samzydev.mod
 		}
 	}
 }
+
 
 
 
@@ -330,33 +336,34 @@ namespace com.ultrabit.bitheroes.ui.battle
 				}
 			}
 			string str = (int8 < 0) ? "+" : ""; //string for health change
-			string text = BattleText.COLOR_GREEN;
-			float scale = 1f;
-			Vector2 center = Util.GetCenter(entity.transform, true);
-			if (int8 >= 0)
+			string text = BattleText.COLOR_GREEN; //text color
+			float scale = 1f; //text scale
+			Vector2 center = Util.GetCenter(entity.transform, true); //get center of screen in Vector2
+			if (int8 >= 0) //if battle entity value is equal to or greater than 0
 			{
-				if ((flag3 || flag4) && !flag)
+				if ((flag3 || flag4) && !flag) //if crit or double hit, and not block
 				{
-					text = BattleText.COLOR_ORANGE;
-					scale = 1.25f;
+					text = BattleText.COLOR_ORANGE; //change text to orange
+					scale = 1.25f; //set scale to 1.25
 				}
-				else if (!flag3 && !flag4 && flag)
+				else if (!flag3 && !flag4 && flag) //else if not crit or double hit, but block
 				{
-					text = BattleText.COLOR_PURPLE;
+					text = BattleText.COLOR_PURPLE; //change color of text to purple
 				}
 				else
 				{
-					text = BattleText.COLOR_RED;
+					text = BattleText.COLOR_RED; //otherwise, default to red
 				}
 			}
-			if (int5 > 0)
+			if (int5 > 0) //if gained sheild
 			{
-				text = BattleText.COLOR_PINK;
+				text = BattleText.COLOR_PINK; //change text to pink
 			}
-			else if (int7 != 0)
+			else if (int7 != 0) //if damage gained change is not 0
 			{
-				text = BattleText.COLOR_TEAL;
+				text = BattleText.COLOR_TEAL; //change color to teal
 			}
+			/* Animation stuff start */
 			CharacterDisplay componentInChildren = entity.GetComponentInChildren<CharacterDisplay>();
 			if (componentInChildren != null)
 			{
@@ -445,31 +452,33 @@ namespace com.ultrabit.bitheroes.ui.battle
 				num3 += 30f;
 				num5 += num4;
 			}
-			string text2 = "";
-			if (sfsob.ContainsKey("bat64"))
+			/* end animation stuff */
+			string text2 = ""; //sets empty string
+			if (sfsob.ContainsKey("bat64")) //if BATTLE_ENTITY_FIRE_HEALTH_CHANGE
 			{
-				text2 = "bat64";
+				text2 = "bat64"; //set BATTLE_ENTITY_FIRE_HEALTH_CHANGE
 			}
-			else if (sfsob.ContainsKey("bat65"))
+			else if (sfsob.ContainsKey("bat65")) //if BATTLE_ENTITY_WATER_HEALTH_CHANGE
 			{
-				text2 = "bat65";
+				text2 = "bat65"; //set BATTLE_ENTITY_WATER_HEALTH_CHANGE
 			}
-			else if (sfsob.ContainsKey("bat66"))
+			else if (sfsob.ContainsKey("bat66")) //if BATTLE_ENTITY_ELECTRIC_HEALTH_CHANGE
 			{
-				text2 = "bat66";
+				text2 = "bat66"; //set BATTLE_ENTITY_ELECTRIC_HEALTH_CHANGE
 			}
-			else if (sfsob.ContainsKey("bat67"))
+			else if (sfsob.ContainsKey("bat67")) //if BATTLE_ENTITY_EARTH_HEALTH_CHANGE
 			{
-				text2 = "bat67";
+				text2 = "bat67"; //set BATTLE_ENTITY_EARTH_HEALTH_CHANGE
 			}
-			else if (sfsob.ContainsKey("bat68"))
+			else if (sfsob.ContainsKey("bat68")) //if BATTLE_ENTITY_AIR_HEALTH_CHANGE
 			{
-				text2 = "bat68";
+				text2 = "bat68"; //set BATTLE_ENTITY_AIR_HEALTH_CHANGE
 			}
-			if (flag6 && this._battleText)
+			if (flag6 && this._battleText) //if battle bonus and text showing
 			{
-				string link = "battle_bonus";
-				string color = BattleText.COLOR_CYAN;
+				string link = "battle_bonus"; //creates link string
+				string color = BattleText.COLOR_CYAN; //sets text color to cyan
+				/* I am not going through all of that but it just changes the text color based on different bonuses */
 				if (text2 != null)
 				{
 					if (!(text2 == "bat64"))
@@ -508,14 +517,15 @@ namespace com.ultrabit.bitheroes.ui.battle
 				this.AddBattleTextObj().LoadDetails(Language.GetString(link, null, false) + this.GetChangePercText(value), color, 3f, 0f, center.x, num3, 0.6f, -30f, num5);
 				num3 -= 30f;
 				num5 += num4;
+				/* end that thing */
 			}
-			if (flag7 && this._battleText)
+			if (flag7 && this._battleText) //if battle reduce and text
 			{
 				this.AddBattleTextObj().LoadDetails(Language.GetString("battle_reduced", null, false) + this.GetChangePercText(value), BattleText.COLOR_CYAN, 3f, 0f, center.x, num3, 0.6f, -30f, num5);
 				num3 += 30f;
 				num5 += num4;
 			}
-			if (flag8)
+			if (flag8) //if redict
 			{
 				if (this._battleText)
 				{
@@ -525,7 +535,7 @@ namespace com.ultrabit.bitheroes.ui.battle
 				}
 				GameData.instance.audioManager.PlaySoundLink("block", 1f);
 			}
-			if (flag9)
+			if (flag9) //if absorb
 			{
 				if (this._battleText)
 				{
@@ -535,8 +545,9 @@ namespace com.ultrabit.bitheroes.ui.battle
 				}
 				GameData.instance.audioManager.PlaySoundLink("block", 1f);
 			}
-			if (num != 0)
+			if (num != 0) //if change of battle is not zero
 			{
+				/* more animatin stuff regarding elements */
 				string text3 = "";
 				string color2 = text;
 				float num6 = 20f;
@@ -596,9 +607,10 @@ namespace com.ultrabit.bitheroes.ui.battle
 					string text4 = str + Util.NumberFormat(-(float)int8, true, false, 100f) + " " + text3;
 					this.AddBattleTextObj().LoadDetails(text4, color2, 3f, 10f, center.x, num7, scale, -30f, num5);
 				}
-				if (this._battleEffects)
+				/* end that */
+				if (this._battleEffects) //if action has effect animation
 				{
-					SpritesFlash spritesFlash = entity.GetComponent<SpritesFlash>();
+					SpritesFlash spritesFlash = entity.GetComponent<SpritesFlash>(); //play it
 					if (spritesFlash == null)
 					{
 						spritesFlash = entity.gameObject.AddComponent<SpritesFlash>();
@@ -609,28 +621,28 @@ namespace com.ultrabit.bitheroes.ui.battle
 					{
 						spritesFlash2 = entity.overlay.gameObject.AddComponent<SpritesFlash>();
 					}
-					spritesFlash2.DoFlash();
+					spritesFlash2.DoFlash(); //same here
 				}
-				if (num < 0)
+				if (num < 0) //if battle change is negative
 				{
-					if (this._battleAnimations)
+					if (this._battleAnimations) //if has animatins enabled
 					{
-						entity.PlayAnimation("hit");
+						entity.PlayAnimation("hit"); //play animation
 					}
-					GameData.instance.audioManager.PlaySoundPoolLink("damage", 1f);
+					GameData.instance.audioManager.PlaySoundPoolLink("damage", 1f); //play sound
 				}
-				else if (int3 > 0)
+				else if (int3 > 0) //else if BATTLE_ENTITY_HEALTH_CHANGE is positive
 				{
-					GameData.instance.audioManager.PlaySoundLink("heal", 1f);
+					GameData.instance.audioManager.PlaySoundLink("heal", 1f); //play heal
 				}
-				else if (int5 > 0)
+				else if (int5 > 0) //else if BATTLE_ENTITY_SHIELD_CHANGE is positive
 				{
-					GameData.instance.audioManager.PlaySoundLink("sheen", 1f);
+					GameData.instance.audioManager.PlaySoundLink("sheen", 1f); //play sheen?
 				}
 			}
-			if (int7 != 0)
+			if (int7 != 0) //if BATTLE_ENTITY_DAMAGE_GAINED_CHANGE is not zero
 			{
-				entity.SetDamageGained(int6);
+				entity.SetDamageGained(int6); //set damage gained BATTLE_ENTITY_DAMAGE_GAINED
 			}
 			float seconds = ((abilityActionRef != null) ? abilityActionRef.duration : 0.05f) / this.GetSpeed(null);
 			if (flag3 && int3 != 0)
@@ -641,3 +653,132 @@ namespace com.ultrabit.bitheroes.ui.battle
 		}
 	}
 }
+
+#########################################
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using com.ultrabit.bitheroes.core;
+using com.ultrabit.bitheroes.model.ability;
+using com.ultrabit.bitheroes.model.battle;
+using com.ultrabit.bitheroes.model.character;
+using com.ultrabit.bitheroes.model.events;
+using com.ultrabit.bitheroes.model.item;
+using com.ultrabit.bitheroes.model.kongregate;
+using com.ultrabit.bitheroes.model.language;
+using com.ultrabit.bitheroes.model.music;
+using com.ultrabit.bitheroes.ui.ability;
+using com.ultrabit.bitheroes.ui.assets;
+using com.ultrabit.bitheroes.ui.character;
+using com.ultrabit.bitheroes.ui.dungeon;
+using com.ultrabit.bitheroes.ui.familiar;
+using com.ultrabit.bitheroes.ui.item;
+using com.ultrabit.bitheroes.ui.victory;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
+using Sfs2X.Core;
+using Sfs2X.Entities.Data;
+using UnityEngine;
+using UnityEngine.Events;
+
+namespace com.ultrabit.bitheroes.ui.battle
+{
+	// Token: 0x02000511 RID: 1297
+	public partial class Battle : MonoBehaviour
+	{
+		// Token: 0x06002D5A RID: 11610
+		private void DoActionVictory(SFSObject sfsob)
+		{
+			if (this._replay) //if replay enabled
+			{
+				this.DoReplayComplete(); //restart dungeon
+				return;
+			}
+			if (sfsob.GetInt("bat5") != GameData.instance.PROJECT.character.id) //if current entity is not player
+			{
+				this.RunQueue(); //run queue again
+				return;
+			}
+			this._results = true; //we have results! lets change them :)
+			long @long = sfsob.GetLong("cha5"); //CHARACTER_EXP
+			int @int = sfsob.GetInt("cha9"); //CHARACTER_GOLD
+			int int2 = sfsob.GetInt("cha4"); //CHARACTER_LEVEL
+			int int3 = sfsob.GetInt("cha19"); //CHARACTER_POINTS
+			List<ItemData> list = ItemData.listFromSFSObject(sfsob);//get items from sfsob
+			long num = @long - GameData.instance.PROJECT.character.exp; //num equals character exp minus character exp
+			int num2 = @int - GameData.instance.PROJECT.character.gold; //num2 equals character gold minus character gold
+			int creditsGained = 0; //no credits
+			int level = GameData.instance.PROJECT.character.level; //bruyh
+			int points = GameData.instance.PROJECT.character.points; //yep
+			if (GameData.instance.PROJECT.dungeon != null) //if we in a dungeon
+			{
+				//make sure we not hackin
+				KongregateAnalytics.checkEconomyTransaction(KongregateAnalytics.getBattleEconomyType(this), null, list, sfsob, KongregateAnalytics.getBattleEconomyContext(this), 2, this._type != 2, null, true);
+			}
+			Dungeon dungeon = GameData.instance.PROJECT.dungeon; //define dungeon?
+			if (dungeon != null) //if not null
+			{
+				GameData.instance.PROJECT.character.addDungeonLoot(new ItemData(ItemBook.Lookup(3, 3), (int)num), dungeon.type, dungeon.dungeonRef.id); //character xp loot
+				GameData.instance.PROJECT.character.addDungeonLoot(new ItemData(ItemBook.Lookup(1, 3), num2), dungeon.type, dungeon.dungeonRef.id); //character gold loot
+			}
+			GameData.instance.PROJECT.character.exp = @long; //new character xp
+			GameData.instance.PROJECT.character.gold = @int; //new character gold
+			GameData.instance.PROJECT.character.level = int2; //new character level
+			GameData.instance.PROJECT.character.points = int3; //new character poitns
+			GameData.instance.PROJECT.character.addItems(list, true); //new items
+			Transform transform = GameData.instance.windowGenerator.NewVictoryWindow(-1); //show victory window
+			transform.GetComponent<VictoryWindow>().ON_CLOSE.AddListener(new UnityAction<object>(this.OnDialogClose));
+			string @string;
+			bool flag;
+			switch (this._type)
+			{
+			case 2:
+			case 3:
+			case 6:
+			case 7:
+			case 9:
+				@string = Language.GetString("ui_town", null, false);
+				flag = true;
+				goto IL_285;
+			}
+			@string = Language.GetString("ui_continue", null, false);
+			flag = false;
+			IL_285:
+			VictoryWindow component = transform.GetComponent<VictoryWindow>();
+			int type = this._type;
+			long exp = num;
+			int gold = num2;
+			List<ItemData> items = list;
+			List<BattleStat> battleStats = this._battleStats;
+			bool shouldPlayMusic = true;
+			string customShieldText = null;
+			string customLootText = null;
+			bool isCloseRed = flag;
+			component.LoadDetails(type, exp, gold, items, battleStats, shouldPlayMusic, customShieldText, customLootText, @string, true, isCloseRed, false);
+			if (this._type == 2)
+			{
+				GameData.instance.PROJECT.character.analytics.incrementValue(BHAnalytics.PVP_BATTLES_WON, true);
+			}
+			this.TrackEnd("Win", creditsGained, num2);
+			this.RunQueue();
+		}
+	}
+}
+############################
+Dungeon Extension patch
+if (GameData.instance.PROJECT.character.toCharacterData(false).nftIsAdFree)
+			{
+				sfsobject.PutBool("cha130", true);
+			}
+>>
+if (true)
+			{
+				sfsobject.PutBool("cha130", true);
+			}
+
+patch
+public void checkCurrencyChanges(SFSObject sfsob, bool update = false)
+		{
+			KongregateAnalytics.updateCommonFields();
+		}
