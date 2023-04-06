@@ -11,7 +11,7 @@ Just go to [Releases](https://github.com/YungSamzy/bitheroes-console-patch/relea
 
 ## How this works
 
-I first patched all ```Unity.Log``` functions in UnityEngine.CoreModule.dll. Then I called hooked into ```SteamLogin()``` in Assembly-CSharp.dll to call the console when the program logs into Steam.
+I first patched all ```Unity.Log``` functions in UnityEngine.CoreModule.dllto output to a console. Then I called hooked into ```SteamLogin()``` in Assembly-CSharp.dll to allocate a console when the program logs into Steam.
 
 Hook Example:
 ```csharp
