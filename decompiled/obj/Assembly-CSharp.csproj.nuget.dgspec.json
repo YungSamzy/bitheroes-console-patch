@@ -1,0 +1,47 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\SamzyDev\\Documents\\GitHub\\bitheroes-console-patch\\decompiled\\Assembly-CSharp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\SamzyDev\\Documents\\GitHub\\bitheroes-console-patch\\decompiled\\Assembly-CSharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\SamzyDev\\Documents\\GitHub\\bitheroes-console-patch\\decompiled\\Assembly-CSharp.csproj",
+        "projectName": "Assembly-CSharp",
+        "projectPath": "C:\\Users\\SamzyDev\\Documents\\GitHub\\bitheroes-console-patch\\decompiled\\Assembly-CSharp.csproj",
+        "packagesPath": "C:\\Users\\SamzyDev\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SamzyDev\\Documents\\GitHub\\bitheroes-console-patch\\decompiled\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SamzyDev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net40"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net40": {
+            "targetAlias": "net40",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net40": {
+          "targetAlias": "net40",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
